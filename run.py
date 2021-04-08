@@ -13,6 +13,7 @@ def add_daynumber(raw_data: pd.DataFrame, startswith=0):
 
 
 def run():
+    # Change the filename to whatever you want
     filename = 'us.csv'
     data = pd.read_csv(filename)
     data = add_daynumber(data)
