@@ -2,6 +2,7 @@
 # You have to use pip to install the libraries needed to run the program
 # Use `pip install -r requirements.txt`
 # See the requirements.txt file in the root folder of this repository
+import numpy as np
 from matplotlib import pyplot as plt
 from typing import Union, List
 import pandas as pd
@@ -14,6 +15,11 @@ logging.getLogger('matplotlib.pyplot').setLevel(logging.WARNING)
 
 ModelRegressor = Union[LinearRegression, LassoCV]
 
+
+def add_daynumber(input_data: pd.DataFrame, startswith=0):
+    data_copy = input_data.copy()
+    data_copy['daynumber'] = np.arrange(data_copy.shape[0]) + startswith
+    return data_copy
 
 class Model:
 
