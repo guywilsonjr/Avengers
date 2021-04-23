@@ -11,6 +11,9 @@ def add_daynumber(raw_data: pd.DataFrame, startswith=0):
     data_copy['daynumber'] = np.arange(data_copy.shape[0]) + startswith
     return data_copy
 
+def add_columnfromdf1todf2(column_name: str, df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
+    df2[column_name] = df1[column_name]
+    return df2
 
 def run():
     # Change the filename to whatever you want
