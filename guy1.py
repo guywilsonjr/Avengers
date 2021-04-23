@@ -1,7 +1,16 @@
 import pandas as pd
 
 
-filename = '/home/guy/Downloads/ranks.xlsx'
-my_table = pd.read_excel(filename, sheet_name=None)
-for page_name, dataset in my_table.items():
-    print(dataset)
+def getpopulationdf() -> pd.DataFrame:
+    return pd.read_csv('Population.csv')
+
+def getgenderdf():
+    return pd.read_csv('GenderRatio.csv')
+
+def getpneumodf():
+    return pd.read_csv('pneumo.csv')
+
+dfs = [getgenderdf(), getpneumodf(), getpopulationdf()]
+
+for df in dfs:
+    print(df.head())
