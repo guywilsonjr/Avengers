@@ -12,6 +12,22 @@ def add_daynumber(raw_data: pd.DataFrame, startswith=0):
     return data_copy
 
 def add_columnfromdf1todf2(column_name: str, df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
+    '''
+    Get a new data frame where if the call is add_columnsfromdf1todf2(col2, df1, df2)
+    df1:
+        col1 col2
+    al    a   b
+    ca    c   d
+    and df2:
+        col3 col4
+    al   1    2
+    ca   3    4
+
+    returns a new df2:
+        col3 col4 col2
+    al   1    2   b
+    ca   3    4   d
+    '''
     df2[column_name] = df1[column_name]
     return df2
 
